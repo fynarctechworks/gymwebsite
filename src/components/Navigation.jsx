@@ -51,8 +51,6 @@ function Navigation({ currentPage }) {
           </div>
           
           <div className="flex items-center gap-4">
-            <button className="hidden sm:block bg-primary text-white font-display uppercase px-4 sm:px-6 py-2 text-xs sm:text-sm font-semibold hover:bg-red-700 transition-colors">Join Now</button>
-            
             {/* Mobile Menu Button */}
             <button 
               className="md:hidden text-slate-800 dark:text-white"
@@ -106,9 +104,6 @@ function Navigation({ currentPage }) {
                 >
                   Contact
                 </Link>
-                <button className="sm:hidden bg-primary text-white font-display uppercase px-6 py-3 text-sm font-semibold hover:bg-red-700 transition-colors w-full">
-                  Join Now
-                </button>
               </div>
             </div>
           </div>

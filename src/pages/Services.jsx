@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 import './Home.css'
 
 function Services() {
@@ -10,48 +11,7 @@ function Services() {
 
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans">
-      {/* Top Info Bar */}
-      <div className="hidden lg:block border-b border-slate-200 dark:border-white/10 py-2 text-xs uppercase tracking-widest bg-slate-50 dark:bg-black">
-        <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="flex gap-6">
-            <span className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-[16px] text-primary">phone</span> +91 98765 43210
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-[16px] text-primary">mail</span> contact@fitkit.com
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-[16px] text-primary">location_on</span> Andheri West, Mumbai
-            </span>
-          </div>
-          <div className="flex gap-4">
-            <a className="hover:text-primary transition-colors" href="#">Facebook</a>
-            <a className="hover:text-primary transition-colors" href="#">Twitter</a>
-            <a className="hover:text-primary transition-colors" href="#">Instagram</a>
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-white/10">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="text-3xl font-display font-bold tracking-tighter italic text-primary">
-              FIT<span className="text-slate-900 dark:text-white">KIT</span>
-            </span>
-          </div>
-          <div className="hidden md:flex items-center gap-8 font-display uppercase tracking-wider text-sm">
-            <Link className="hover:text-primary transition-colors" to="/">Home</Link>
-            <Link className="hover:text-primary transition-colors" to="/about">About</Link>
-            <Link className="text-primary" to="/services">Services</Link>
-            <Link className="hover:text-primary transition-colors" to="/pricing">Pricing</Link>
-            <Link className="hover:text-primary transition-colors" to="/contact">Contact</Link>
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="bg-primary text-white font-display uppercase px-6 py-2 text-sm font-semibold hover:bg-red-700 transition-colors">Join Now</button>
-          </div>
-        </div>
-      </nav>
+      <Navigation currentPage="services" />
 
       <main className="flex-grow">
         {/* Headline Section */}
@@ -197,61 +157,7 @@ function Services() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-accent-dark text-white py-24 border-t border-white/5">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
-            <div>
-              <h3 className="text-3xl font-display font-bold tracking-tighter italic mb-6">
-                FIT<span className="text-primary">KIT</span>
-              </h3>
-              <p className="text-slate-400 text-sm mb-8 leading-relaxed">Gym workouts are structured exercise sessions designed to improve fitness and reach peak performance.</p>
-              <div className="flex gap-4">
-                <a className="hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">public</span></a>
-                <a className="hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">video_library</span></a>
-                <a className="hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined">alternate_email</span></a>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-lg font-display font-bold uppercase mb-8 border-l-4 border-primary pl-4">Quick Links</h4>
-              <ul className="space-y-4 text-slate-400 text-sm">
-                <li><Link className="hover:text-primary transition-colors" to="/">Home</Link></li>
-                <li><Link className="hover:text-primary transition-colors" to="/about">About Us</Link></li>
-                <li><Link className="hover:text-primary transition-colors" to="/services">Services</Link></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Membership</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Contact Us</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-display font-bold uppercase mb-8 border-l-4 border-primary pl-4">Our Services</h4>
-              <ul className="space-y-4 text-slate-400 text-sm">
-                <li><a className="hover:text-primary transition-colors" href="#">Bodybuilding</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Yoga Classes</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Cardio Programs</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Personal Training</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">Weight Loss</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-display font-bold uppercase mb-8 border-l-4 border-primary pl-4">Newsletter</h4>
-              <p className="text-slate-400 text-sm mb-6">Subscribe to get latest fitness tips and offers.</p>
-              <form className="flex">
-                <input className="bg-accent-dark border-none focus:ring-1 focus:ring-primary w-full px-4 text-sm" placeholder="Email Address" type="email" />
-                <button className="bg-primary px-4 py-2 hover:bg-red-700 transition-colors">
-                  <span className="material-symbols-outlined">send</span>
-                </button>
-              </form>
-            </div>
-          </div>
-          <div className="container mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-slate-500 text-xs uppercase tracking-widest">© 2023 FITKIT. All Rights Reserved.</p>
-            <div className="flex gap-8 text-xs uppercase tracking-widest text-slate-500">
-              <a className="hover:text-primary transition-colors" href="#">Privacy Policy</a>
-              <a className="hover:text-primary transition-colors" href="#">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
